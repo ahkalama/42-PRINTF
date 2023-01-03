@@ -6,7 +6,7 @@
 /*   By: ahkalama <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:25:00 by ahkalama          #+#    #+#             */
-/*   Updated: 2022/12/23 08:15:25 by ahkalama         ###   ########.fr       */
+/*   Updated: 2022/12/24 15:16:15 by ahkalama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,9 @@ int	ft_unsigned(unsigned int a)
 
 	ret = 0;
 	if (a >= 10)
+	{
 		ret += ft_unsigned(a / 10);
+	}
 	write(1, &"0123456789"[a % 10], 1);
 	return (ret + 1);
-}
-
-// ret + 1 ' ler olmazsa testerdan geçmez, çünkü;
-// fonksiyonumun kendisini yazdırmaya çalıştığımda değerini değiştirir.
-#include <stdio.h>
-
-int	main()
-{
-	printf("\n%d\n", ft_unsigned(10));
 }
